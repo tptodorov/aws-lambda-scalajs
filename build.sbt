@@ -42,13 +42,13 @@ def makeLambdaConfiguration(config: Configuration) = Seq(
       client
   },
 
-  uploadFunctions in Staging <<= (name, zipJS in Compile, lambdaClient in config, exportedFunctions, lambdaExecRole in config, streams in config) map {
+  uploadFunctions in config <<= (name, zipJS in Compile, lambdaClient in config, exportedFunctions, lambdaExecRole in config, streams in config) map {
     (n, zipFile, client, lambdaHandlers, execRole, s) =>
       lambdaHandlers.foreach {
         handler =>
 
           val result = client.uploadFunction(new UploadFunctionRequest()
-            .withFunctionName(s"$n-$handler")
+            .withFunctionName(s"$n-$handler-$config")
             .withHandler(s"index.$handler")
             .withFunctionZip(new FileInputStream(zipFile))
             .withMode(Mode.Event)

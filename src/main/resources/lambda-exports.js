@@ -11,6 +11,6 @@ function makeLambda(scalaCallObject) {
     };
 }
 
-exports.handler = makeLambda(demo.awslambda.Demo());
+exports.handler = makeLambda(demo.awslambda.DemoSuccess());
 
-exports.failing = makeLambda(demo.awslambda.DemoFailing());
+exports.failing = makeLambda(demo.awslambda.DemoFail());

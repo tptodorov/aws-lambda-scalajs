@@ -3,7 +3,7 @@ package demo.awslambda
 import scala.scalajs.js.annotation.JSExport
 
 @JSExport
-object Demo {
+object DemoSuccess {
   @JSExport
   def apply(event: Object, context: Object): String = {
     println("Scala JS, Hello world!")
@@ -14,7 +14,7 @@ object Demo {
 }
 
 @JSExport
-object DemoFailing {
+object DemoFail {
   @JSExport
   def apply(event: Object, context: Object): String = {
     println("This lambda will fail!")
