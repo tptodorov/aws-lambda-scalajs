@@ -6,7 +6,12 @@ See:
  * src/main/scala/demo/awslambda/Demo.scala - some demo function objects
  * src/main/resources/lambda-exports.js  - this exports ScalaJS function objects 
  
-See build.sbt for more details.
+See build.sbt for configuration details.
+
+This projects contains two demo functions:
+
+ * DemoSuccess - prints input arguments to console.
+ * DemoFail - throws an exception and lambda function fails properly with an error message.
 
 ## Upload all functions
 
